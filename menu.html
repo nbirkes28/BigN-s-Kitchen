@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Truck - Menu</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+		.nav a {
+			color: #444;
+			text-decoration: none;
+			font-size: 18px;
+			margin: 0 10px;
+		}
+		.nav a.active {
+			color: #00b3b3;
+		}
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		.meals {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.meal {
+			position: relative;
+			margin-bottom: 20px;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		.meal img {
+			width: 350px;
+			height: 350px;
+			object-fit: cover;
+		}
+		.meal .meal-info {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: none;
+			background-color: rgba(0,0,0,0.5);
+			color: white;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+		.meal:hover .meal-info {
+			display: flex;
+		}
+		.meal .meal-info h3 {
+			margin: 0;
+			font-size: 22px;
+			text-align: center;
+		}
+		.meal .meal-info p {
+			font-size: 18px;
+			margin: 10px 0;
+			text-align: center;
+		}
+		.meal .meal-info p.ingredients {
+			font-weight: bold;
+		}
+		.meal .meal-info p.calories {
+			font-style: italic;
+		}
+		.meal .meal-info p.description {
+			font-style: italic;
+			color: #ccc;
+		}
+		.meal-info p.price {
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+			font-size: 20px;
+			font-weight: bold;
+			color: #00b3b3;
+		}
+	</style>
+</head>
+<body>
+	<nav class="nav">
+		<a href="homescreen.html">Homescreen Info</a>
+		<a href="menu.html" class="active">Menu</a>
+		<a href="locations.html">Locations</a>
+		<a href="ordering.html">Ordering</a>
+	</nav>
+	<div class="container">
+		<!-- Menu page -->
+		<h1>Menu</h1>
+		<div class="meals">
+			<div class="meal">
+				<img src="pics/meal1.jpg" alt="Meal 1">
+				<div class="meal-info">
+					<h3>Meal 1</h3>
+					<p class="ingredients">Ingredients: chicken, rice, vegetables</p>
+					<p class="calories">Calories: 450</p>
+					<p class="description">A flavorful and healthy meal.</p>
+					<p class="price">$10</p>
+				</div>
+			</div>
+			<div class="meal">
+				<img src="pics/meal2.jpg" alt="Meal 2">
+				<div class="meal-info">
+					<h3>Meal 2</h3>
+					<p class="ingredients">Ingredients: beef, noodles, broccoli</p>
+					<p class="calories">Calories: 500</p>
+					<p class="description">A hearty and satisfying meal.</p>
+					<p class="price">$12</p>
+				</div>
+			</div>
+			<div class="meal">
+				<img src="pics/meal3.jpg" alt="Meal 3">
+				<div class="meal-info">
+					<h3>Meal 3</h3>
+					<p class="ingredients">Ingredients: salmon, quinoa, asparagus</p>
+					<p class="calories">Calories: 400</p>
+					<p class="description">A healthy and flavorful meal.</p>
+					<p class="price">$11</p>
+				</div>
+			</div>
+			<div class="meal">
+				<img src="pics/meal4.jpg" alt="Meal 4">
+				<div class="meal-info">
+					<h3>Meal 4</h3>
+					<p class="ingredients">Ingredients: tofu, noodles, vegetables</p>
+					<p class="calories">Calories: 400</p>
+					<p class="description">A healthy and flavorful vegetarian meal.</p>
+					<p class="price">$10</p>
+				</div>
+			</div>
+			<div class="meal">
+				<img src="pics/meal5.jpg" alt="Meal 5">
+				<div class="meal-info">
+					<h3>Meal 5</h3>
+					<p class="ingredients">Ingredients: pork, mashed potatoes, gravy</p>
+					<p class="calories">Calories: 600</p>
+					<p class="description">A hearty and comfort food meal.</p>
+					<p class="price">$12</p>
+				</div>
+			</div>
+			<div class="meal">
+				<img src="pics/meal6.jpg" alt="Meal 6">
+				<div class="meal-info">
+					<h3>Meal 6</h3>
+					<p class="ingredients">Ingredients: lamb, rice, vegetables</p>
+					<p class="calories">Calories: 500</p>
+					<p class="description">A flavorful and satisfying meal.</p>
+					<p class="price">$13</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Truck - Ordering</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+		.nav a {
+			color: #444;
+			text-decoration: none;
+			font-size: 18px;
+			margin: 0 10px;
+		}
+		.nav a.active {
+			color: #00b3b3;
+		}
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		.order-form {
+			display: flex;
+			flex-direction: column;
+		}
+		.order-form label {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+		.order-form input, .order-form select {
+			font-size: 18px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+		}
+		.order-form input[type="submit"] {
+			background-color: #00b3b3;
+			color: white;
+			font-size: 22px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<nav class="nav">
+		<a href="homescreen.html">Home</a>
+		<a href="menu.html">Menu</a>
+		<a href="locations.html">Locations</a>
+		<a href="ordering.html" class="active">Order Now</a>
+	</nav>
+	<div class="container">
+		<!-- Ordering page -->
+		<h1>Order Now</h1>
+		<form class="order-form" action="/order" method="post">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+			<label for="phone">Phone:</label>
+			<input type="tel" id="phone" name="phone" required>
+			<label for="pickup">Pickup Method:</label>
+			<select id="pickup" name="pickup" required>
+				<option value="pickup">Pickup at Truck</option>
+				<option value="delivery">Delivery</option>
+			</select>
+			<label for="meal">Meal:</label>
+			<select id="meal" name="meal" required>
+				<option value="meal1">Meal 1</option>
+				<option value="meal2">Meal 2</option>
+				<option value="meal3">Meal 3</option>
+				<option value="meal4">Meal 4</option>
+				<option value="meal5">Meal 5</option>
+				<option value="meal6">Meal 6</option>
+			</select>
+			<input type="submit" value="Submit Order">
+		</form>
+		<ul id="order-list"></ul>
+	</div>
+		<script>
+			function sendText() {
+			// Get the form values
+				var name = document.getElementById('name').value;
+				var email = document.getElementById('email').value;
+				var phone = document.getElementById('phone').value;
+				var pickup = document.getElementById('pickup').value;
+				var meal = document.getElementById('meal').value;
+
+			// Send the text message
+			// Replace 1234567890 with the phone number to send the text to
+			// This example uses the Twilio API to send the text message. You will need to sign up for a Twilio account and obtain an API key to use this function.
+				var accountSid = 'AC0d06c31a443e6647ce2af41b8fe3c7bd';
+				var authToken = 'a7e5ff2b96808187e7e854bfa065acdc';
+				var client = require('twilio')(accountSid, authToken);
+
+				client.messages.create({
+					to: '3162536336',
+					from: '12057746991',
+					body: 'New order received: ' + 
+						'\nName: ' + name + 
+						'\nEmail: ' + email + 
+						'\nPhone: ' + phone + 
+						'\nPickup: ' + pickup + 
+						'\nMeal: ' + meal
+				}, function(err, message) {
+					console.log(message.sid);
+				});
+			}
+		</script>
+
+</body>
+</html>
+

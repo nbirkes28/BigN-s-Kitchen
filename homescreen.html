@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Food Truck - Homescreen Info</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		.nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+		.nav a {
+			color: #444;
+			text-decoration: none;
+			font-size: 18px;
+			margin: 0 10px;
+		}
+		.nav a.active {
+			color: #00b3b3;
+			border-bottom: 2px solid #00b3b3;
+		}
+		.tab-separator {
+			border: 0;
+			height: 2px;
+			background-color: #ccc;
+			margin: 20px 0;
+		}
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		.status {
+			display: flex;
+			justify-content: space-between;
+			align-items: left;
+			margin-bottom: 20px;
+			font-size: 20px;
+			color: #00b3b3;
+		}
+		.status.closed {
+			color: red;
+		}
+		.status.closing-soon {
+			color: orange;
+		}
+		.reviews {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 20px;
+		}
+		.review {
+			width: 50%;
+			margin-bottom: 20px;
+			padding: 20px;
+			box-sizing: border-box;
+			background-color: #f2f2f2;
+			border-radius: 10px;
+		}
+		.review h3 {
+			margin: 0;
+			font-size: 22px;
+		}
+		.review p {
+			font-size: 18px;
+			color: #666;
+		}
+	</style>
+</head>
+<body>
+	<nav class="nav">
+		<a href="homescreen.html" class="active">Homescreen Info</a>
+		<a href="menu.html">Menu</a>
+		<a href="locations.html">Locations</a>
+		<a href="ordering.html">Ordering</a>
+	</nav>
+	<hr class="tab-separator">
+	<div class="container">
+		<!-- Homescreen Info page -->
+		<h1>Homescreen Info</h1>
+		<div class="status">
+			<h2>Status:</h2>
+			<h2 class="open">Open</h2>
+		</div>
+		<div class="reviews">
+			<div class="review">
+				<h3>Customer 1</h3>
+				<p>Great food and service!</p>
+			</div>
+			<div class="review">
+				<h3>Customer 2</h3>
+				<p>Delicious meals and fast service.</p>
+			</div>
+		</div>
+		<div class="owner-comment">
+			<h2>Owner's Comment of the Day:</h2>
+			<p>Thank you to all of our loyal customers for supporting our food truck. We are excited to continue serving you delicious meals and hope to see you again soon!</p>
+		</div>
+	</div>
+</body>
+</html>
